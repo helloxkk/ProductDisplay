@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>公司产品展示</title>
+		<script src="js/yingrubao.js"></script>
+		<style>
+			body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0} 
+			body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;} 
+			a{color:#2d374b;text-decoration:none} 
+			a:hover{color:#cd0200;text-decoration:underline} 
+			em{font-style:normal} 
+			li{list-style:none} 
+			img{border:0;vertical-align:middle} 
+			table{border-collapse:collapse;border-spacing:0} 
+			p{word-wrap:break-word}
+    		
+    		.header{
+    			width:100%;
+    			height:50px;
+    			background-color:#150d0f;	
+    			position: fixed;
+    			z-index:9999;
+    			top:0px;
+    			
+    		}
+    		
+    		.logo img{
+    			float:left;
+    			margin-left:12%;
+    			
+    		}
+    		.youshangjiao>ul>li{
+    			float:right;
+    		}
+    		.youshangjiao>ul{
+    			margin-right:10%;
+    		}
+    		.youshangjiao>ul>li>img{
+    			width:30px;
+    			height:30px;
+    			margin-right:13px;
+    			margin-top:10px;
+    		}
+    		
+    		
+    		
+    		
+    		
+    		
+    		   		
+    		.navigation1,.navigation2,.navigation3,.navigation4{
+    			width:5%;
+    			height:70px;
+    			font-family: "微软雅黑";
+    			font-size:16px;
+    			color:#bfa69a;
+    			line-height: 50px;
+    			text-align: center;
+    			float:left;
+    			position: relative;
+    		} 
+    		
+    		.navigation1{
+    			margin-left:17%;
+    		}   		
+    		 span {
+  				cursor: pointer;
+			}
+			.header span:hover{
+				color:white;
+			}
+					
+    		.erjicaidan1,.erjicaidan2,.erjicaidan3,.erjicaidan4{
+    			width:800px;
+    			height:450px;
+    			margin-top:20px;
+    			background-color:white;
+    			box-shadow: 1px 2px 4px 1px #adadad;
+    			display: none;
+				
+    		}
+    		.xiaojiantou1,.xiaojiantou2,.xiaojiantou3,.xiaojiantou4{
+				width:0;
+				height:0;
+				border-left: 18px solid transparent;
+				border-right: 18px solid transparent;
+				border-bottom: 20px solid #dfdfdf;		
+			}
+			.xiaojiantou1{
+				position:absolute;
+				top:-20px;
+				left:268px;
+			}
+			.xiaojiantou2{
+				position:absolute;
+				top:-20px;
+				left:320px;
+			}
+			.xiaojiantou3{
+				position:absolute;
+				top:-20px;
+				left:372px;
+			}
+			.xiaojiantou4{
+				position:absolute;
+				top:-20px;
+				left:424px;
+			}
+			.guanbi{
+				width:25px;
+				height:25px;
+				float:right;
+				
+				margin-right:6px;
+				margin-top:6px;
+			}
+			.guanbi>img{
+				width:100%;
+				float:right;	
+			}
+			
+			
+			
+			
+			
+    		.erjicaidan1{
+    			position: absolute;
+    			top:50px;
+    			left:-260px;
+    		}   		
+    		.erjicaidan2{
+    			position: absolute;
+    			top:50px;
+    			left:-312px;
+    		}
+    		.erjicaidan3{
+    			position: absolute;
+    			top:50px;
+    			left:-363px;
+    		}
+    		.erjicaidan4{
+    			position: absolute;
+    			top:50px;
+    			left:-415px;
+    		}
+    		
+    		 
+    		
+    		    		
+    		.navigation1.active .erjicaidan1 {
+  				display: block;
+  				position: absolute;
+			}
+			.navigation2.active .erjicaidan2 {
+  				display: block;
+  				position: absolute;
+			}
+			.navigation3.active .erjicaidan3 {
+  				display: block;
+  				position: absolute;
+			}    		
+    		.navigation4.active .erjicaidan4 {
+  				display: block;
+  				position: absolute;
+			}
+    		
+    		
+    		
+    		
+    		.zhenrenfa{
+    			width:18%;
+    			height:450px;
+    			color:black;
+    			font-size:15px;
+    			float:left;
+    		}
+    		.renfazihao{
+    			font-size:18px;
+    			margin-bottom: 10px;
+    		}
+    		.tanchuantupian{
+    			width:40%;
+    			height:387px;
+    			background-color:peru;
+    			float:right;
+    			margin-top:32px;
+    		}
+    		.tanchuantupian>img{
+    			width:100%;
+    		}
+    		.tanchuantupian2{
+    			width:66%;
+    			height:387px;
+    			background-color:peru;
+    			float:left;
+    			margin-top:32px;
+    		}
+    		.tanchuantupian2>img{
+    			width:100%;
+    		}
+    		.tanchuantupian3{
+    			width:42%;
+    			height:391px;
+    			background-color:white;
+    			float:left;
+    			margin-top:32px;
+    		}
+    		.tanchuantupian3>img{
+    			width:100%;
+    		}
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		.huaqian{
+    			width:30%;
+    			height:400px;
+    			margin-top:50px;
+    			font-size:16px;
+    			color:black;	
+    			list-style: none;
+    			background-color:white;
+    			float:left;	
+    		}
+    		.gongju{
+    			width:18%;
+    			height:150px;
+    			color:black;
+    			font-size:16px;
+    			list-style: none;
+    			background-color:white;
+    			float:left;
+    		}
+    		.gongjuzihao{
+    			font-size:18px;
+    			margin-bottom:20px;
+    		}
+    		.peijian{
+    			width:18%;
+    			height:450px;
+    			color:black;
+    			font-size:16px;
+    			float:left;
+    		}
+    		.peijianzihao{
+    			font-size:18px;
+    			margin-bottom: 10px;
+    		}
+    		.main{
+    			width:100%;
+    			
+    			background-color:peachpuff;
+    			position: absolute;
+    			left:0;
+    			top:50px;
+    			
+    		}
+    		
+    		
+    		
+    		.poster>img{
+    			width:100%;
+    		}
+    		.gongsixiangqin>img{
+    			width:100%
+    		}
+    		.neitishair>img{
+    			width:100%;
+    		}
+    		.houmian>img{
+    			width:100%;
+    		}
+    		
+    		
+    		    		
+    		    		
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="poster">
+				<img src="img/公司海报.jpg"/>
+			</div>
+			
+			<div class="gongsixiangqin">
+				<img src="img/公司详情.jpg"/>
+			</div>
+			<div class="neitishair">
+				<img src="img/Neitis hair.jpg"/>
+			</div>
+			
+			<div class="houmian">
+				<img src="img/后面.jpg"/>
+			</div>
+			
+			
+			
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="header">
+			
+			
+			
+			<div class="logo">
+				<img src="img/logo.jpg"/>
+			</div>
+			<div class="youshangjiao">
+				<ul>
+					<li><img src="img/taobao.jpg"/></li>
+					<li><img src="img/AliExpress.jpg"/></li>
+					<li><img src="img/facebook.jpg"/></li>
+					<li><img src="img/amazon.jpg"/></li>
+				</ul>
+			</div>
+			
+			
+			
+			
+			
+			<div class="navigation1">
+				<span>人发</span>
+				<div class="erjicaidan1">
+					<div class="guanbi"><img src="img/关闭.jpg"/></div>
+					<div class="xiaojiantou1"></div>
+					<div class="zhenrenfa">
+						<ul>
+							<li class="renfazihao">真人发</li>
+							<li><a href="tape hair.html">Tape hair</a></li>
+							<li><a href="min tape hair.html">Mini tape hair</a></li>
+							<li><a href="">Clip in hair</a></li>
+							<li><a href="">Micro Ring hair</a></li>
+							<li><a href="">Nano Ring hair</a></li>
+							<li><a href="">I Tip hair</a></li>
+							<li><a href="">U Tip hair</a></li>
+						</ul>
+					</div>
+					<div class="zhenrenfa">
+						<ul>
+							<li class="renfazihao">发条</li>
+							<li><a href="">Remy hair</a></li>
+							<li><a href="">Hair Bulk</a></li>
+							<li><a href="">Lace Closure</a></li>
+							<li><a href="">Raw hair</a></li>
+							<li><a href="">Ponytail</a></li>
+						</ul>
+					</div>
+					<div class="zhenrenfa">
+						<ul>
+							<li class="renfazihao">胡子,眉毛</li>
+							<li><a href="">KS-E17F-EM-747HH</a></li>
+							<li><a href="">KS-E17F-EM-754HH</a></li>
+						</ul>
+					</div>
+					<div class="tanchuantupian">
+						<img src="img/弹窗图片1.jpg"/>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="navigation2">
+				<span>化纤</span>
+				<div class="erjicaidan2">
+					<div class="guanbi"><img src="img/关闭.jpg"/></div>
+					<div class="xiaojiantou2"></div>
+					<div class="huaqian">
+						<ul>
+							<li><a href="">波波头</a></li>
+							<li><a href="">卡子发</a></li>
+							<li><a href="">五夹直发</a></li>
+							<li><a href="">蛇曲卡子发</a></li>
+							<li><a href="">丝带马尾</a></li>
+							<li><a href="">化纤彩带</a></li>
+							<li><a href="">刘海</a></li>
+						</ul>
+					</div>
+					<div class="tanchuantupian2">
+						<img src="img/弹窗图片2.jpg"/>
+					</div>
+					
+					
+					
+					
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			<div class="navigation3">
+				<span>工具</span>
+				<div class="erjicaidan3">
+					<div class="guanbi"><img src="img/关闭.jpg"/></div>
+					<div class="xiaojiantou3"></div>
+					<div class="gongju">
+						<ul>
+							<li class="gongjuzihao">双面胶</li>
+							<li><a href="">No-Shell Roll</a></li>
+							<li><a href="">Ultra Tape Roll</a></li>
+							<li><a href="">Lace-front Roll</a></li>
+							<li><a href="">China Tape</a></li>
+							<li><a href="">3M Tape</a></li>
+						</ul>
+					</div>
+					<div class="gongju">
+						<ul>
+							<li class="gongjuzihao">工具</li>
+							<li><a href="">U型钳子</a></li>
+							<li><a href="">螺纹钳子</a></li>
+							<li><a href="">平板钳子</a></li>
+							<li><a href="">三孔钳子</a></li>
+							<li><a href="">弯嘴钳子</a></li>
+						</ul>
+					</div>
+					<div class="gongju">
+						<ul>
+							<li class="gongjuzihao">工具</li>
+							<li><a href="">有硅胶接发环</a></li>
+							<li><a href="">无硅胶接发环</a></li>
+							<li><a href="">口环</a></li>
+							<li><a href="">钩针</a></li>
+							
+							
+						</ul>
+					</div>
+					<div class="gongju">
+						<ul>
+							<li class="gongjuzihao">工具</li>
+							<li><a href="">直发器</a></li>
+							<li><a href="">接发器</a></li>
+							<li><a href="">卷发器</a></li>
+							<li><a href="">超声波接发器</a></li>
+							
+						</ul>
+					</div>
+					<div class="gongju">
+						<ul>
+							<li class="gongjuzihao">工具</li>
+							<li><a href="">串珠器</a></li>
+							<li><a href="">胶棒</a></li>
+							<li><a href="">溶胶炉</a></li>
+							<li><a href="">胶枪</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			<div class="navigation4">
+				<span>配件</span>
+				<div class="erjicaidan4">
+					<div class="guanbi"><img src="img/关闭.jpg"/></div>
+					<div class="xiaojiantou4"></div>
+					<div class="peijian">
+						<ul>
+							<li class="peijianzihao">配件</li>
+							<li><a href="http://www.baidu.com" target="_blank">猪毛鬓梳</a></li>
+							<li><a href="">水晶线</a></li>
+							<li><a href="">发夹</a></li>
+							<li><a href="">橡皮筋</a></li>
+							<li><a href="">发带</a></li>
+							<li><a href="">盘发器</a></li>
+						</ul>
+					</div>
+					<div class="peijian">
+						<ul>
+							<li class="peijianzihao">配件</li>
+							<li><a href="">龙夹</a></li>
+							<li><a href="">I型卡子</a></li>
+							<li><a href="">U型卡子</a></li>
+							<li><a href="">发簪</a></li>
+							<li><a href="">假发套</a></li>
+							<li><a href="">胶枪</a></li>
+						</ul>
+					</div>
+					<div class="peijian">
+						<ul>
+							<li class="peijianzihao">配件</li>
+							<li><a href="">胶水</a></li>
+							<li><a href="">去胶水</a></li>
+							<li><a href="">手指套</a></li>
+							<li><a href="">头套衣架</a></li>
+							<li><a href="">橡皮筋</a></li>
+							<li><a href="">发夹</a></li>
+						</ul>
+					</div>
+					<div class="tanchuantupian3">
+						<img src="img/弹窗图片3.jpg"/>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+		</div>
+		<script>
+
+			$('.navigation1').on('click', function(e) {
+  			$(this).toggleClass('active')
+			})
+			$('.navigation2').on('click', function(e) {
+  			$(this).toggleClass('active')
+			})
+			$('.navigation3').on('click', function(e) {
+  			$(this).toggleClass('active')
+			})
+			$('.navigation4').on('click', function(e) {
+  			$(this).toggleClass('active')
+			})
+		</script>
+	</body>
+</html>
